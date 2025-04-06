@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome To Wile Craft</title>
+  <link rel="icon" href="wile.png" type="image/x-icon" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background: #1a1a2e url('https://i.imgur.com/3Qf3DgY.gif') repeat;
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      padding: 30px 0 10px 0;
+    }
+
+    .wile {
+      font-size: 1.3em;
+      color: #ffffff;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .help {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #00ffcc;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 12px;
+      z-index: 1000;
+      cursor: pointer;
+    }
+
+    .help:hover {
+      background: #00ccaa;
+    }
+
+    .menu {
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 100%;
+      padding: 0 10px;
+    }
+
+    .link, .store-menu {
+      padding: 10px 20px;
+      background: transparent;
+      color: white;
+      text-decoration: none;
+      border: 2px solid white;
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+      font-size: 10px;
+      flex: 1 1 auto;
+      min-width: 130px;
+      max-width: 200px;
+    }
+
+    .link:hover, .store-menu:hover {
+      background: white;
+      color: black;
+    }
+
+    .store-menu {
+      border-color: yellow;
+      color: yellow;
+    }
+
+    .store-menu:hover {
+      background: yellow;
+      color: black;
+    }
+
+    .image {
+      width: 150px;
+      height: 150px;
+      margin: 30px auto;
+      animation: popupZoom 1s ease-out;
+    }
+
+    .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes popupZoom {
+      0% {
+        transform: translateY(100px) scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0px) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .desk {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 30px auto;
+      max-width: 800px;
+      border-radius: 15px;
+    }
+
+    .srip {
+      font-size: 16px;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    p {
+      font-size: 12px;
+      text-align: justify;
+      margin: 10px 0;
+    }
+
+    /* Help Popup */
+    .help-popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .popup-content {
+      background-color: #1e1e2f;
+      margin: 10% auto;
+      padding: 20px;
+      border: 2px solid white;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      color: white;
+      font-size: 12px;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .close-btn {
+      color: red;
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .link, .store-menu {
+        font-size: 10px;
+        padding: 10px;
+        min-width: unset;
+        flex: 1 1 40%;
+      }
+
+      .help {
+        font-size: 10px;
+        padding: 8px 10px;
+      }
+
+      .srip {
+        font-size: 12px;
+      }
+
+      p {
+        font-size: 10px;
+      }
+
+      .popup-content {
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="container">
+      <h2 class="wile">Welcome To Wile Craft</h2>
+    </div>
+    <a class="help" onclick="toggleHelp()">😊 HELP</a>
+  </div>
+
+  <div class="menu">
+    <a href="https://saweria.co/WileCraft" class="link">SAWERIA</a>
+    <a href="https://youtube.com/@willcraft11?si=P3kZxBK9THTavqL9" class="link">YOUTUBE</a>
+    <a href="https://discord.gg/q9mGeDAZy8" class="link">DISCORD</a>
+    <a href="dalaman/index.html" class="store-menu">STORE MENU</a>
+  </div>
+
+  <div class="image">
+    <img src="wile.png" alt="Wile Logo">
+  </div>
+
+  <div class="desk">
+    <h2 class="srip">Description</h2>
+    <br />
+    <p>Halo semuanya, terima kasih banyak telah berkunjung.</p>
+    <p>Saya sangat menghargai dukungan Anda melalui YouTube atau Saweria.</p>
+    <p>Jangan lupa untuk subscribe dan like. Saya sangat berterima kasih atas itu.</p>
+    <p>Namun, akan lebih baik lagi jika Anda mendukung saya dengan membeli produk digital yang tersedia di bagian Store Menu.</p>
+    <p>Bagi Anda yang ingin tahu apa saja yang saya jual, silakan kunjungi toko saya.</p>
+    <p>Terima kasih sekali lagi kepada semua yang telah berkunjung dan memberikan dukungan hingga saat ini. 🙏</p>
+  </div>
+
+  <!-- Help Popup -->
+  <div class="help-popup" id="helpPopup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="toggleHelp()">&times;</span>
+      <h3>Bantuan</h3>
+      <p>👋 Halo! Terima kasih telah berkunjung ke Wile Craft.</p>
+      <p>💡 Kamu bisa mendukung kami lewat:</p>
+      <ul>
+        <li>📺 <b>YouTube</b> – Subscribe & Like</li>
+        <li>💰 <b>Saweria</b> – Donasi untuk support</li>
+        <li>🛒 <b>Store Menu</b> – Beli produk digital</li>
+      </ul>
+      <p>📞 Butuh bantuan langsung? Hubungi kami di WhatsApp:</p>
+      <a href="https://wa.me/6282287752416" target="_blank" style="color: #00ffcc; text-decoration: underline;">
+        📲 0822-8775-2416
+      </a>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function toggleHelp() {
+      var popup = document.getElementById("helpPopup");
+      popup.style.display = (popup.style.display === "block") ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+      var popup = document.getElementById("helpPopup");
+      if (event.target === popup) {
+        popup.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
